@@ -79,7 +79,7 @@ const loginWithToken = async (req, res) => {
 		}
 
 		if (!id || !username) {
-			return res.status(401).json({ message: "Invalid session" });
+			return res.json({ message: "Invalid session" });
 		}
 
 		return res.json({
