@@ -136,14 +136,6 @@ const loginController = async (req, res) => {
 		);
 
 		// Store token in HTTP-only cookie
-		res.cookie("token", token, {
-			httpOnly: true,
-			secure: process.env.NODE_ENV === "production",
-			sameSite: "lax",
-			maxAge: 24 * 60 * 60 * 1000, // 1 day
-			path: "/",
-		});
-
 		return res.status(200).json({
 			message: "Login successful",
 			user: {
